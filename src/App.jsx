@@ -5,6 +5,7 @@ import Die from "./Die.jsx";
 function App() {
   const [allDice, setAllDice] = useState(allNewDice());
   const [rolls, setRolls] = useState(0);
+  const [tenzies, setTenzies] = useState(false);
 
   function allNewDice() {
     const newDice = [];
@@ -43,6 +44,15 @@ function App() {
       holdDie={() => holdDie(d.id)}
     />
   ));
+  useEffect(() => {
+    const allHeld = allDice.every((d) => d.isHeld);
+    const firstValue = allDice[0].value;
+    const allValue = allDice.every((d) => d.value === firstValue);
+    if (allHeld && allValue) {
+      setTenzies(true);
+      console.log("You WON!");
+    }
+  }, [allDice]);
   return (
     <main>
       <div className="border--box">
