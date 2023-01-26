@@ -56,6 +56,7 @@ function App() {
   function resetGame() {
     setAllDice(allNewDice());
     setTenzies(false);
+    setRolls(0);
   }
   return (
     <main>
