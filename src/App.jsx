@@ -1,6 +1,7 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
 import Die from "./Die.jsx";
+import Confetti from "react-confetti";
 
 function App() {
   const [allDice, setAllDice] = useState(allNewDice());
@@ -60,6 +61,7 @@ function App() {
   }
   return (
     <main>
+      {tenzies && <Confetti />}
       <div className="border--box">
         <div className="inner--box">
           <div className="text--box">
