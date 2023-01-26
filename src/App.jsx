@@ -64,13 +64,20 @@ function App() {
       {tenzies && <Confetti />}
       <div className="border--box">
         <div className="inner--box">
-          <div className="text--box">
-            <h1>Tenzies</h1>
-            <p className="description">
-              Roll until all dice are the same. Click each die to freeze it at
-              its current value between rolls.
-            </p>
-          </div>
+          {tenzies ? (
+            <>
+              <h1>YOU WON IN </h1>
+              <h1>{rolls} ROLLS!</h1>
+            </>
+          ) : (
+            <div className="text--box">
+              <h1>Tenzies</h1>
+              <p className="description">
+                Roll until all dice are the same. Click each die to freeze it at
+                its current value between rolls.
+              </p>
+            </div>
+          )}
           <div className="dice--box">{dice}</div>
           <div>
             {tenzies ? (
@@ -82,7 +89,7 @@ function App() {
                 Roll
               </div>
             )}
-            <div className="rolls">Rolls: {rolls}</div>
+            {/* <div className="rolls">Rolls: {rolls}</div> */}
           </div>
         </div>
       </div>
