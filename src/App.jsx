@@ -53,6 +53,10 @@ function App() {
       console.log("You WON!");
     }
   }, [allDice]);
+  function resetGame() {
+    setAllDice(allNewDice());
+    setTenzies(false);
+  }
   return (
     <main>
       <div className="border--box">
@@ -66,9 +70,15 @@ function App() {
           </div>
           <div className="dice--box">{dice}</div>
           <div>
-            <div className="roll--button" onClick={rollDice}>
-              Roll
-            </div>
+            {tenzies ? (
+              <div className="roll--button" onClick={resetGame}>
+                New Game
+              </div>
+            ) : (
+              <div className="roll--button" onClick={rollDice}>
+                Roll
+              </div>
+            )}
             <div className="rolls">Rolls: {rolls}</div>
           </div>
         </div>
