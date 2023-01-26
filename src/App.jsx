@@ -64,6 +64,7 @@ function App() {
       {tenzies && <Confetti />}
       <div className="border--box">
         <div className="inner--box">
+          {/* Changing text based on win-state */}
           {tenzies ? (
             <>
               <h1>YOU WON IN </h1>
@@ -79,6 +80,7 @@ function App() {
             </div>
           )}
           <div className="dice--box">{dice}</div>
+          {/* Changing button based on win-state */}
           <div>
             {tenzies ? (
               <div className="roll--button" onClick={resetGame}>
