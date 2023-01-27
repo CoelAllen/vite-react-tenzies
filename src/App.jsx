@@ -43,6 +43,7 @@ function App() {
       value={d.value}
       isHeld={d.isHeld}
       holdDie={() => holdDie(d.id)}
+      // dots={d.dots}
     />
   ));
   useEffect(() => {
